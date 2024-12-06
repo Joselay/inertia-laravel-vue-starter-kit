@@ -1,7 +1,10 @@
-<template lang="">
-    <div>About</div>
-</template>
-<script>
-export default {};
+<script setup>
+defineProps({
+    user: String,
+});
 </script>
-<style lang=""></style>
+<template>
+    <div>
+        <h1>About Page {{ user }}</h1>
+    </div>
+</template>
