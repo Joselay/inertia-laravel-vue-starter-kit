@@ -1,5 +1,7 @@
-<script setup></script>
+<script setup>
+import { Head } from "@inertiajs/vue3";
+</script>
 
 <template>
-    <h1>hello</h1>
+    <Head :title="$page.component" />
 </template>

@@ -4,10 +4,12 @@ import "./bootstrap";
 import "../css/app.css";
 
 import { createApp, h, DefineComponent } from "vue";
-import { createInertiaApp } from "@inertiajs/vue3";
+import { createInertiaApp, Head, Link } from "@inertiajs/vue3";
 import Layout from "./Layouts/Layout.vue";
+import { ZiggyVue } from "../../vendor/tightenco/ziggy/src/js";
 
 createInertiaApp({
+    title: (title) => `${title} - App Name`,
     resolve: (name) => {
         const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
         let page = pages[`./Pages/${name}.vue`] as { default: DefineComponent };
@@ -18,6 +20,14 @@ createInertiaApp({
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
             .use(plugin)
+            .use(ZiggyVue)
+            .component("Head", Head)
+            .component("Link", Link)
             .mount(el);
+    },
+    progress: {
+        color: "#29d",
+        showSpinner: false,
+        includeCSS: true,
     },
 });

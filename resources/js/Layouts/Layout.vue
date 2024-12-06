@@ -1,3 +1,5 @@
+<script setup></script>
+
 <template>
     <div>
         <header class="text-white bg-indigo-500">
@@ -5,8 +7,8 @@
                 class="flex items-center justify-center max-w-screen-lg p-4 mx-auto"
             >
                 <div class="space-x-6">
-                    <a href="/">Home</a>
-                    <a href="/about">About</a>
+                    <Link :href="route('home')">Home</Link>
+                    <Link :href="route('about')">About</Link>
                 </div>
             </nav>
         </header>
