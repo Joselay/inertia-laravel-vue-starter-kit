@@ -4,7 +4,7 @@ import defaultTheme from "tailwindcss/defaultTheme";
 export default {
     content: [
         "./resources/**/*.blade.php",
-        "./resources/**/*.ts",
+        "./resources/**/*.js",
         "./resources/**/*.vue",
     ],
     theme: {
